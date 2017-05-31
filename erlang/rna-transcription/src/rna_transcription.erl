@@ -3,13 +3,17 @@
         , test_version/0
         ]).
 
-to_rna(Ns) ->
-    [ transcribe(N) || N <- Ns].
-
-transcribe(N) when N =:= $G -> $C;
-transcribe(N) when N =:= $C -> $G;
-transcribe(N) when N =:= $T -> $A;
-transcribe(N) when N =:= $A -> $U.
-
 test_version() ->
     1.
+
+to_rna(Ns) ->
+    [ transcribe_nucleotide(N) || N <- Ns].
+
+transcribe_nucleotide($G) ->
+    $C;
+transcribe_nucleotide($C) ->
+    $G;
+transcribe_nucleotide($T) ->
+    $A;
+transcribe_nucleotide($A) ->
+    $U.
