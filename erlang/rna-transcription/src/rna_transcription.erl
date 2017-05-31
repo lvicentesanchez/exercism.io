@@ -7,7 +7,7 @@ test_version() ->
     1.
 
 to_rna(Ns) ->
-    [ transcribe_nucleotide(N) || N <- Ns].
+    [ transcribe_nucleotide(N) || N <- Ns ].
 
 transcribe_nucleotide($G) ->
     $C;
