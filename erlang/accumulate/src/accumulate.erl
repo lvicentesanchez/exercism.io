@@ -4,7 +4,7 @@
         ]).
 
 accumulate(Fn, Ls) ->
-    [Fn(L) || L <- Ls].
+    [ Fn(L) || L <- Ls ].
 
 test_version() ->
     1.
