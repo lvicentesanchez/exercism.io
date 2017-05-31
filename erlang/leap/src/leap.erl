@@ -3,12 +3,14 @@
         , test_version/0 
 	      ]).
 
-leap_year(Year) ->
-    Rem4 = Year rem 4,
-    Rem100 = Year rem 100,
-    Rem400 = Year rem 400,
-    ( Rem4 =:= 0 ) and ( ( Rem100 /= 0 ) or ( Rem400 =:= 0 ) ).
-
+leap_year(Y) when Y rem 400 =:= 0->
+    true;
+leap_year(Y) when Y rem 100 =:= 0->
+    false;
+leap_year(Y) when Y rem 4 =:= 0->
+    true;
+leap_year(_) ->
+    false.
 
 test_version() ->
     1.
