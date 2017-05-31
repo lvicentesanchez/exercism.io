@@ -7,4 +7,4 @@ hello() ->
     "Hello, World!".
 
 test_version() ->
-		2.
+    2.
